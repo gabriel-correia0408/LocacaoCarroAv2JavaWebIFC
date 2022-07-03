@@ -24,7 +24,7 @@ public class Usuario {
     private String nome;
     private boolean admin;
 
-    public Usuario(String nome, boolean admin) {
+    public Usuario(String nome, boolean admin) {;
         this.nome = nome;
         this.admin = admin;
     }

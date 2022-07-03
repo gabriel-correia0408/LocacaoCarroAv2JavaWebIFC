@@ -13,8 +13,8 @@ import jakarta.persistence.Table;
  */
 @Entity(name = "moto")
 @Table(name = "moto")
-public class Moto extends Veiculo {
+public class Moto {//extends Veiculo {
     public Moto(String marca, String cor, String placa, float preco) {
-        super(marca, cor, placa, preco);
+        //super(marca, cor, placa, preco);
     }
 }

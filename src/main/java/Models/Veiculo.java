@@ -16,7 +16,7 @@ import jakarta.persistence.InheritanceType;
  * @author joao.chaicoski
  */
 @Entity(name = "veiculo")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Veiculo {
     @Id
     @GeneratedValue

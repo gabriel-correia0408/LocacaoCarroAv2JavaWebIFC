@@ -14,14 +14,14 @@ import jakarta.persistence.Table;
  */
 @Entity(name = "carro")
 @Table(name = "carro")
-public class Carro extends Veiculo {
+public class Carro {//extends Veiculo {
     @Column
     private int portas;
     @Column
     private boolean conversivel;
 
     public Carro(String marca, String cor, String placa, float preco, int portas, boolean conversivel) {
-        super(marca, cor, placa, preco);
+       // super(marca, cor, placa, preco);
         this.portas = portas;
         this.conversivel = conversivel;
     }

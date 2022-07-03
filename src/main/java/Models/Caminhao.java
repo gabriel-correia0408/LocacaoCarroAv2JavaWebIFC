@@ -14,12 +14,12 @@ import jakarta.persistence.Table;
  */
 @Entity(name = "caminhao")
 @Table(name = "caminhao")
-public class Caminhao extends Veiculo{
+public class Caminhao {//extends Veiculo{
     @Column
     private int eixos;
 
     public Caminhao(String marca, String cor, String placa, float preco, int eixos) {
-        super(marca, cor, placa, preco);
+        //super(marca, cor, placa, preco);
         this.eixos = eixos;
     }
 
