@@ -4,17 +4,40 @@
  */
 package Models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+
 /**
  *
  * @author joao.chaicoski
  */
+@Entity(name = "veiculo")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Veiculo {
+    @Id
+    @GeneratedValue
+    @Column(name = "id", updatable = false, nullable = false)
     private int id;
+    @Column
     private String marca;
+    @Column
     private String cor;
+    @Column
     private String placa;
+    @Column
     private float preco;
 
+    public Veiculo(String marca, String cor, String placa, float preco) {
+        this.marca = marca;
+        this.cor = cor;
+        this.placa = placa;
+        this.preco = preco;
+    }
+    
     public int getId() {
         return id;
     }

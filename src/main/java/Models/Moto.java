@@ -4,8 +4,17 @@
  */
 package Models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 /**
  *
  * @author joao.chaicoski
  */
-public class Moto extends Veiculo {}
+@Entity(name = "moto")
+@Table(name = "moto")
+public class Moto extends Veiculo {
+    public Moto(String marca, String cor, String placa, float preco) {
+        super(marca, cor, placa, preco);
+    }
+}
