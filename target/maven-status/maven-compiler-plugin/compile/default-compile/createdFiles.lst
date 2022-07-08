@@ -1,0 +1,7 @@
+Models\Caminhao.class
+Models\Usuario.class
+ifc\edu\br\av2\resources\JakartaEE9Resource.class
+Models\Carro.class
+Models\Moto.class
+ifc\edu\br\av2\JakartaRestConfiguration.class
+Models\Veiculo.class
