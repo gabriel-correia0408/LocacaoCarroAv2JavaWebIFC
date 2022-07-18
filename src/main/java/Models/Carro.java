@@ -4,10 +4,12 @@
  */
 package Models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -16,14 +18,12 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "carro")
-public class Carro {
+public class Carro extends BaseEntity{
     @Id
     @GeneratedValue
     private int id;
     @Column
     private int portas;
-    @Column
-    private boolean conversivel;
     @Column
     private String marca;
     @Column
@@ -32,17 +32,20 @@ public class Carro {
     private String placa;
     @Column
     private float preco;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Usuario usuario;
 
-    public Carro(int portas, boolean conversivel, String marca, String cor, String placa, float preco) {
+    public Carro(int portas, String marca, String cor, String placa, float preco) {
         this.portas = portas;
-        this.conversivel = conversivel;
         this.marca = marca;
         this.cor = cor;
         this.placa = placa;
         this.preco = preco;
     }
     
-    public int getId() {
+    public Carro(){};
+    
+    public long getId() {
         return id;
     }
 
@@ -91,12 +94,12 @@ public class Carro {
         this.portas = portas;
     }
 
-    public boolean isConversivel() {
-        return conversivel;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setConversivel(boolean conversivel) {
-        this.conversivel = conversivel;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
      
 }

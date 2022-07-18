@@ -4,11 +4,15 @@
  */
 package Models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -16,7 +20,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario extends BaseEntity{
     @Id
     @GeneratedValue
     private int id;
@@ -24,11 +28,15 @@ public class Usuario {
     private String nome;
     @Column(name = "admin")
     private boolean admin;
+    @OneToMany(mappedBy="usuario", cascade = CascadeType.ALL)
+    private Set<Carro> carros = new HashSet<>();
 
     public Usuario(String nome, boolean admin) {;
         this.nome = nome;
         this.admin = admin;
     }
+    
+    public Usuario(){};
 
     public boolean isAdmin() {
         return admin;
@@ -49,5 +57,12 @@ public class Usuario {
     public int getId() {
         return id;
     }
-    
+
+    public Set<Carro> getCarros() {
+        return carros;
+    }
+
+    public void setCarros(Set<Carro> carros) {
+        this.carros = carros;
+    }
 }

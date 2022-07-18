@@ -1,11 +1,8 @@
 package Database;
 
 
-import Models.Caminhao;
 import Models.Carro;
-import Models.Moto;
 import Models.Usuario;
-import Models.Veiculo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -29,7 +26,6 @@ public class DbConfig {
                     .setProperty("hibernate.connection.autocommit","true")
                     .addAnnotatedClass(Carro.class)
                     .addAnnotatedClass(Usuario.class)
-                    .addAnnotatedClass(Veiculo.class)
                     .buildSessionFactory();
         }
         catch (Throwable e) {
